@@ -29,11 +29,11 @@ Mensaje directo:
 ```
 ¡Hola! 👋 Aquí tienes nuestro cuaderno «Mi primer libro para colorear» (1–3 años), con dibujos grandes y sencillos:
 
-👉 https://www.amazon.es/dp/ASIN?tag=pequejuega-21
+👉 https://www.amazon.es/dp/ASIN?tag=pequejuega-ig-21
 
 Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.
 ```
-(Sustituir ASIN. Si se crea un ID de seguimiento propio para Instagram, cambiar el tag.)
+(Sustituir ASIN. El tag pequejuega-ig-21 es el ID de seguimiento de Instagram.)
 
 ## 4. Bios (enlace único a la página de enlaces)
 | Red | Enlace en bio | Texto de bio sugerido |
@@ -42,4 +42,4 @@ Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen 
 | TikTok | https://pequejuegaoficial-star.github.io/pequejuega-media/?r=tt | (igual) |
 | YouTube (enlaces del canal) | https://pequejuegaoficial-star.github.io/pequejuega-media/?r=yt | — |
 
-El parámetro `?r=` elige el ID de seguimiento de Amazon por red (configuración en `docs/index.html`, `TAG_POR_RED`). Mientras no haya IDs propios por red, todos usan `pequejuega-21`.
+El parámetro `?r=` elige el ID de seguimiento de Amazon por red (configuración en `docs/index.html`, `TAG_POR_RED`). IDs creados el 8-nov: pequejuega-ig-21, pequejuega-tt-21, pequejuega-yt-21; sin parámetro → pequejuega-21.
