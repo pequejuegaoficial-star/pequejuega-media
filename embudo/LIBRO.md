@@ -1,0 +1,45 @@
+# Embudo LIBRO — textos fijos
+
+Estado: preparado. NO se usa en reels hasta que el libro esté publicado en Amazon.es (ASIN real en `docs/index.html`).
+
+## 1. Reel (las 3 redes, mismo vídeo)
+- Segundos 0–3: el cuaderno ya está en plano (abierto en la mesa, ceras al lado) mientras se plantea el problema del padre. No se nombra todavía.
+- Final: escena `tools/cierre-libro.js` → "NUESTRO CUADERNO · Comenta LIBRO 👇 y te lo mando o búscalo en el enlace del perfil".
+- Nunca: "toca el enlace de abajo" (en ninguna red es clicable).
+
+## 2. Texto de la publicación (Metricool, igual en las 3 redes)
+```
+[Gancho: la misma pregunta que abre el vídeo]
+
+[1–2 líneas con la actividad]
+
+📘 Comenta LIBRO y te mando nuestro cuaderno para colorear (1–3 años). También lo tienes en el enlace del perfil.
+
+#ideasparapadres #actividadesniños #juegossinpantallas #librosparacolorear #maternidad #paternidad #niños2años
+```
+
+## 3. Mensaje automático de Instagram (palabra: LIBRO)
+Disparador: comentario que contenga "libro" (mayúsculas/minúsculas indiferente) en cualquier publicación.
+
+Respuesta pública al comentario (opcional, rota entre estas):
+- "¡Te lo acabo de mandar por privado! 📩"
+- "¡Mira tus mensajes! 📘"
+
+Mensaje directo:
+```
+¡Hola! 👋 Aquí tienes nuestro cuaderno «Mi primer libro para colorear» (1–3 años), con dibujos grandes y sencillos:
+
+👉 https://www.amazon.es/dp/ASIN?tag=pequejuega-21
+
+Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.
+```
+(Sustituir ASIN. Si se crea un ID de seguimiento propio para Instagram, cambiar el tag.)
+
+## 4. Bios (enlace único a la página de enlaces)
+| Red | Enlace en bio | Texto de bio sugerido |
+|---|---|---|
+| Instagram | https://pequejuegaoficial-star.github.io/pequejuega-media/?r=ig | Ideas de juego sin pantallas para peques de 1–5 años 🧸 · 📘 Nuestro cuaderno para colorear 👇 |
+| TikTok | https://pequejuegaoficial-star.github.io/pequejuega-media/?r=tt | (igual) |
+| YouTube (enlaces del canal) | https://pequejuegaoficial-star.github.io/pequejuega-media/?r=yt | — |
+
+El parámetro `?r=` elige el ID de seguimiento de Amazon por red (configuración en `docs/index.html`, `TAG_POR_RED`). Mientras no haya IDs propios por red, todos usan `pequejuega-21`.
