@@ -27,13 +27,17 @@ Respuesta pública al comentario (opcional, rota entre estas):
 
 Mensaje directo:
 ```
-¡Hola! 👋 Aquí tienes nuestro cuaderno «Mi primer libro para colorear» (1–3 años), con dibujos grandes y sencillos:
+¡Hola! 👋 Aquí tienes nuestros cuadernos «Mi primer libro para colorear» (1–3 años), con dibujos grandes y sencillos:
 
-👉 https://www.amazon.es/dp/ASIN?tag=pequejuega-ig-21
+📘 100 dibujos (abecedario, números, formas y animales):
+👉 https://www.amazon.es/dp/ASIN_100?tag=pequejuega-ig-21
+
+🧲 ¡Para colgar en la nevera! (50 dibujos por una sola cara):
+👉 https://www.amazon.es/dp/ASIN_50?tag=pequejuega-ig-21
 
 Como Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.
 ```
-(Sustituir ASIN. El tag pequejuega-ig-21 es el ID de seguimiento de Instagram.)
+(Sustituir ASIN_100 / ASIN_50 por los ASIN reales — ISBN 9798140994099 / 9798140999100. El tag pequejuega-ig-21 es el ID de seguimiento de Instagram. Si solo está publicado uno, enviar solo ese.)
 
 ## 4. Bios (enlace único a la página de enlaces)
 | Red | Enlace en bio | Texto de bio sugerido |
