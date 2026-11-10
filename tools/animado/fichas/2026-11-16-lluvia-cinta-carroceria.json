@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-11-16",
+ "slug": "lluvia-cinta-carroceria",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "DÍA DE LLUVIA",
+   "titulo": "¿Llueve otra vez? Solo necesitas *cinta de carrocería*",
+   "sub": "",
+   "dibujo": "cinta"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Una carretera en el suelo",
+   "dibujo": "carretera",
+   "sub": "Curvas, cruces y aparcamiento para sus coches"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Equilibristas en la línea",
+   "dibujo": "equilibrio",
+   "sub": "Caminar sobre la cinta sin salirse"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Telaraña en una puerta",
+   "dibujo": "telarana",
+   "sub": "Lanzad bolas de papel a ver cuántas se quedan pegadas"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Una tarde de lluvia resuelta"
+  }
+ ]
+}

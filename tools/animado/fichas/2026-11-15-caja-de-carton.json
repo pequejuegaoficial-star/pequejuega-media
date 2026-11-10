@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-11-15",
+ "slug": "caja-de-carton",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "3 IDEAS SIN PANTALLAS",
+   "titulo": "Una caja de cartón = *3 juegos*",
+   "sub": "antes de reciclarla",
+   "dibujo": "caja"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Un coche para sentarse",
+   "dibujo": "coche",
+   "sub": "Dibujad ruedas y volante con rotulador"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Un túnel para gatear",
+   "dibujo": "tunel",
+   "sub": "Abre los dos lados y ponla en el pasillo"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Una casa para pintar por dentro",
+   "dibujo": "casa-carton",
+   "sub": "Ceras y a decorar las paredes"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Tres juegos, cero euros"
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-11-13",
+ "slug": "plan-finde-barrio",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "PLAN DE FINDE",
+   "titulo": "¿Sin plan para el finde? Aquí tienes *uno entero*",
+   "sub": "sin salir del barrio",
+   "dibujo": "calendario"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Mañana de mercado",
+   "dibujo": "cesta-fruta",
+   "sub": "Tu peque elige una fruta que no haya probado"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Paseo de colores",
+   "dibujo": "lupa-colores",
+   "sub": "Buscad algo rojo, algo amarillo y algo verde por la calle"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Tarde de cocina",
+   "dibujo": "brocheta",
+   "sub": "Brochetas con la fruta del mercado (el palillo, cosa tuya)"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Un finde entero, sin pantallas"
+  }
+ ]
+}

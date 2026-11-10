@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-11-14",
+ "slug": "botella-de-la-calma",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "ACTIVIDAD DE CALMA",
+   "titulo": "Una botella para *bajar el ritmo*",
+   "sub": "y mirarla juntos",
+   "dibujo": "botella-calma"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Botella de plástico con agua tibia",
+   "dibujo": "gota",
+   "sub": "Llénala hasta tres cuartos"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Purpurina y un chorro de pegamento transparente",
+   "dibujo": "pegamento",
+   "sub": "El pegamento hace que caiga despacio"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Cierra el tapón con pegamento",
+   "dibujo": "botella-calma",
+   "sub": "Este paso lo hace siempre un adulto"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Agitad, respirad y mirad cómo cae"
+  }
+ ]
+}

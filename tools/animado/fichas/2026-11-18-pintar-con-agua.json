@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-11-18",
+ "slug": "pintar-con-agua",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "IDEA SIN PANTALLAS",
+   "titulo": "Pintar *sin manchar* nada",
+   "sub": "Solo necesitas agua",
+   "dibujo": "brocha"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Un vaso de agua y una brocha",
+   "dibujo": "vaso-agua",
+   "sub": "Ni pintura, ni babero"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "A pintar el suelo de la terraza",
+   "dibujo": "baldosa-estrella",
+   "sub": "O una pizarra, o una cartulina oscura"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Se seca… y desaparece",
+   "dibujo": "baldosa-seca",
+   "sub": "Y vuelta a empezar"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para la próxima tarde en casa"
+  }
+ ]
+}

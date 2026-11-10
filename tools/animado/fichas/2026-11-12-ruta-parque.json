@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-11-12",
+ "slug": "ruta-parque",
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "RUTA DE JUEGO",
+   "titulo": "Convierte el parque en *una aventura*",
+   "sub": "3 retos para tu peque",
+   "dibujo": "arbol"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Hojas de 3 colores",
+   "dibujo": "hojas",
+   "sub": "A ver quién las encuentra antes"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Saltar de sombra en sombra",
+   "dibujo": "salto-sombras",
+   "sub": "Sin pisar el sol"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Imitar a los pájaros",
+   "dibujo": "pajaro",
+   "sub": "Escuchad un rato y repetid su canto"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Tres retos y a jugar"
+  }
+ ]
+}

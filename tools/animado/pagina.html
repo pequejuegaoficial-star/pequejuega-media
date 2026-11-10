@@ -1,0 +1,100 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Motor de reels animados de Peque Juega. No se abre a mano: lo usa reel.js.
+     Todo se dibuja en función del tiempo t (window.render(t)), así cada fotograma es exacto. -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#fde68a;font-family:Poppins;color:#1f2937}
+.sc{position:absolute;left:0;top:0;width:1080px;height:1920px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:200px 80px 290px;gap:56px;text-align:center;overflow:hidden}
+.blob{position:absolute;border-radius:999px;background:rgba(255,255,255,.28)}
+.tag{background:#1f2937;color:#fff;font-size:44px;font-weight:700;padding:14px 32px;border-radius:14px;letter-spacing:3px}
+.h1{font-weight:700;line-height:1.16;max-width:940px}
+.w{display:inline-block;white-space:pre}
+.hl{position:relative;display:inline-block;padding:0 20px;white-space:nowrap}
+.hl i{position:absolute;left:0;top:6%;height:90%;width:100%;background:#fff;border-radius:18px;z-index:0}
+.hl b{position:relative;z-index:1;font-weight:700}
+.sub{font-size:56px;font-weight:500;line-height:1.3;max-width:900px}
+.row{display:flex;align-items:center;gap:28px}
+.num{flex:none;width:130px;height:130px;border-radius:999px;background:#1f2937;color:#fde68a;font-size:84px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tt{font-size:76px;font-weight:700;line-height:1.05;text-align:left;max-width:760px}
+.stage{position:relative;flex:none;display:flex;align-items:center;justify-content:center}
+.stage svg{width:100%;height:100%;overflow:visible}
+.logoA{font-size:170px;font-weight:700;line-height:.95;color:#fff;-webkit-text-stroke:9px #1f2937}
+.logoB{font-size:170px;font-weight:700;line-height:.95;margin-top:-6px}
+.big{font-size:72px;font-weight:700;line-height:1.15;max-width:900px}
+.pill{background:#1f2937;color:#fff;font-size:40px;font-weight:700;padding:18px 36px;border-radius:999px;white-space:nowrap}
+</style></head><body><div id="app"></div>
+<script src="dibujos.js"></script>
+<script>
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), p=(u,t0,d)=>cl((u-t0)/d);
+const outCubic=x=>1-Math.pow(1-x,3), inOut=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const outBack=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const outBounce=x=>{const n=7.5625,d=2.75;if(x<1/d)return n*x*x;if(x<2/d)return n*(x-=1.5/d)*x+.75;if(x<2.5/d)return n*(x-=2.25/d)*x+.9375;return n*(x-=2.625/d)*x+.984375};
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const TAU=Math.PI*2;
+let START=[],DUR=[],TOTAL=0;
+
+// Texto con *resaltado*. El titular está completo en el fotograma 0 (es la portada); el resaltado entra después
+function palabras(s,t0){let i=0;return s.split('\n').map(l=>l.split(/(\*[^*]+\*)/).filter(Boolean).map(tr=>{
+  if(tr[0]==='*')return `<span class="hl" data-a="pulse1:${(t0+.1).toFixed(2)}"><i data-a="wipe:${t0.toFixed(2)},.45" data-o="0% 50%"></i><b>${esc(tr.slice(1,-1))}</b></span>`;
+  return esc(tr);}).join('')).join('<br>');}
+
+function arte(nombre,iconos){
+  if(!nombre)return '';
+  if(nombre.startsWith('icono:')){const k=nombre.slice(6),src=iconos[k];if(!src)throw new Error('Falta el icono '+k);
+    let i=0;const inner=src.replace(/<svg[^>]*>|<\/svg>/g,'').replace(/<path stroke="none"[^>]*\/>/,'').replace(/<(path|circle|rect|line|ellipse)/g,(m)=>`${m} data-a="draw:${(.35+.22*i++).toFixed(2)},.7"`);
+    return `<svg viewBox="-5 -5 34 34"><circle cx="12" cy="12" r="15.5" fill="#fff" stroke="#1f2937" stroke-width="1" data-a="pop:0;pulse:.02,.5"/><g fill="none" stroke="#1f2937" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" data-a="wig:3,.5">${inner}</g></svg>`;}
+  const d=DIBUJOS[nombre];if(!d)throw new Error('No existe el dibujo "'+nombre+'". Mira dibujos.js o usa icono:nombre');
+  return `<svg viewBox="${d.vb}"><g stroke="#1f2937" stroke-width="${d.sw||14}" stroke-linecap="round" stroke-linejoin="round">${d.svg}</g></svg>`;}
+
+window.montar=function(ficha,iconos){
+  const E=ficha.escenas,nI=E.filter(e=>e.tipo==='idea').length;
+  const dI=nI>=4?3.5:nI===3?4:5;
+  DUR=E.map(e=>e.dur||(e.tipo==='idea'?dI:3));START=[];let acc=0;DUR.forEach(d=>{START.push(acc);acc+=d;});TOTAL=acc;
+  const fondos=['#fde68a','#7dd3fc','#86efac','#fca5a5'];
+  document.getElementById('app').innerHTML=E.map((e,i)=>{
+    const bg=e.fondo||fondos[i%4];
+    const blobs=`<div class="blob" style="width:${420+(i*53)%140}px;height:${420+(i*53)%140}px;${i%2?'right':'left'}:-150px;top:${i%2?180:1180}px" data-a="float:44,.11,${i};sway:36,.14,${i}"></div><div class="blob" style="width:340px;height:340px;${i%2?'left':'right'}:-120px;top:${i%2?1240:240}px" data-a="float:38,.13,${i+3};sway:30,.1,${i+5}"></div>`;
+    let h='';
+    if(e.tipo==='gancho'){const n=e.titulo.replace(/\*/g,'').length,fs=n<=24?128:n<=42?108:92;
+      h=`<div class="tag">${esc(e.etiqueta||'IDEA SIN PANTALLAS')}</div><div class="h1" style="font-size:${fs}px" data-a="pulse1:.05">${palabras(e.titulo,.45)}</div>${e.sub?`<div class="sub" data-a="rise:1.0">${esc(e.sub)}</div>`:''}${e.dibujo?`<div class="stage" style="width:560px;height:440px" data-t0="1.2">${arte(e.dibujo,iconos)}</div>`:''}`;}
+    else if(e.tipo==='idea'){
+      h=`<div class="row" data-a="rise:.15,.4,50"><div class="num" data-a="pop:.25">${e.n}</div><div class="tt">${esc(e.titulo)}</div></div><div class="stage" style="width:820px;height:700px" data-t0=".55">${arte(e.dibujo,iconos)}</div>${e.sub?`<div class="sub" data-a="rise:${Math.min(2.4,DUR[i]-1.4)}">${esc(e.sub)}</div>`:''}`;}
+    else{h=`${e.dibujo?`<div class="stage" style="width:420px;height:330px" data-t0=".2">${arte(e.dibujo,iconos)}</div>`:''}<div data-a="pop:.3,.5"><div class="logoA">Peque</div><div class="logoB">Juega</div></div><div class="big" data-a="rise:.8">${esc(e.frase)}</div><div class="pill" data-a="pop:1.3;pulse:.035,1,0,1.8">${esc(e.boton||'Guárdalo y síguenos @pequejuega.oficial')}</div>`;}
+    return `<div class="sc" id="s${i}" style="background:${bg};${e.tipo==='cierre'?'gap:44px':''}">${blobs}${h}</div>`;}).join('');
+  document.querySelectorAll('[data-a]').forEach(el=>{
+    el._a=el.dataset.a.split(';').map(x=>{const[n,r]=x.split(':');return[n.trim(),(r||'').split(',').map(Number)];});
+    const st=el.closest('[data-t0]');el._t0=st?+st.dataset.t0:0;el._svg=el instanceof SVGElement;el._op=parseFloat(el.getAttribute('opacity')||1);
+    if(el._svg)el.style.transformBox='fill-box';el.style.transformOrigin=el.dataset.o||'center';
+    if(el._a.some(a=>a[0]==='draw')){el._L=el.getTotalLength();el.style.strokeDasharray=el._L;}});
+  render(0);return {total:TOTAL,cortes:START.concat([TOTAL])};};
+
+function anima(el,u,t){
+  let tx=0,ty=0,rot=0,sx=1,sy=1,op=1;u-=el._t0;
+  for(const[n,a]of el._a){const[a0=0,a1,a2,a3]=a;
+    if(n==='pop'){const k=p(u,a0,a1||.45);if(k<=0)op=0;const s=k<=0?.6:outBack(k);sx*=s;sy*=s;}
+    else if(n==='rise'){const k=outCubic(p(u,a0,a1||.45));op*=k;ty+=(1-k)*(a2||70);}
+    else if(n==='drop'){const k=p(u,a0,.6);op*=cl(k*4);ty-=(1-outBounce(k))*(a1||500);}
+    else if(n==='slide'){const k=outCubic(p(u,a0,a3||.55));op*=cl(k*5);tx+=(1-k)*a1;ty+=(1-k)*(a2||0);}
+    else if(n==='move'){const k=inOut(p(u,a0,a1));tx+=k*a2;ty+=k*(a3||0);}
+    else if(n==='draw'){const k=inOut(p(u,a0,a1||.8));el.style.strokeDashoffset=el._L*(1-k);if(k<=0)op=0;el.style.fillOpacity=p(u,a0+(a1||.8)*.75,.3);}
+    else if(n==='wipe'){sx*=outCubic(p(u,a0,a1||.45));}
+    else if(n==='grow'){sy*=outCubic(p(u,a0,a1||.8));}
+    else if(n==='pulse1'){const s=1+.06*Math.sin(Math.PI*p(u,a0,.5));sx*=s;sy*=s;}
+    else if(n==='fadein'){op*=p(u,a0,a1||.4);}
+    else if(n==='fadeout'){op*=1-inOut(p(u,a0,a1||.6));}
+    else if(n==='spin'){rot+=t*a0;}
+    else if(n==='wig'){rot+=a0*Math.sin(TAU*(a1||1)*t+(a2||0));}
+    else if(n==='float'){ty+=a0*Math.sin(TAU*(a1||.5)*t+(a2||0));}
+    else if(n==='sway'){tx+=a0*Math.sin(TAU*(a1||.5)*t+(a2||0));}
+    else if(n==='pulse'){if(u>=(a3||-9)){const s=1+a0*Math.sin(TAU*(a1||1)*t+(a2||0));sx*=s;sy*=s;}}
+    else if(n==='fall'){const q=(((t/(a1||1.5)+(a2||0))%1)+1)%1;ty+=q*a0;op*=Math.sin(Math.PI*q);}
+    else if(n==='ping'){const q=.5-.5*Math.cos(TAU*t/(a2||2));tx+=a0*q;ty+=(a1||0)*q;}
+  }
+  el.style.opacity=op*el._op;el.style.transform=`translate(${tx}px,${ty}px) rotate(${rot}deg) scale(${sx},${sy})`;}
+
+window.render=function(t){
+  START.forEach((s,i)=>{const el=document.getElementById('s'+i),fin=s+DUR[i];
+    const vis=t>=s-.02&&(i===START.length-1||t<fin+.4);el.style.visibility=vis?'visible':'hidden';if(!vis)return;
+    el.style.transform=i===0?'none':`translateY(${(1-inOut(p(t,s-.02,.35)))*1920}px)`;
+    el.querySelectorAll('[data-a]').forEach(x=>anima(x,t-s,t));});};
+</script></body></html>
