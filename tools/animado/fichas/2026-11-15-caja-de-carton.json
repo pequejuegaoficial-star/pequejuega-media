@@ -12,9 +12,9 @@
   {
    "tipo": "idea",
    "n": 1,
-   "titulo": "Un coche para sentarse",
+   "titulo": "Un auto para sentarse",
    "dibujo": "coche",
-   "sub": "Dibujad ruedas y volante con rotulador"
+   "sub": "Dibuja ruedas y volante con marcador"
   },
   {
    "tipo": "idea",
@@ -28,11 +28,11 @@
    "n": 3,
    "titulo": "Una casa para pintar por dentro",
    "dibujo": "casa-carton",
-   "sub": "Ceras y a decorar las paredes"
+   "sub": "Crayones y a decorar las paredes"
   },
   {
    "tipo": "cierre",
-   "frase": "Tres juegos, cero euros"
+   "frase": "Tres juegos, cero gasto"
   }
  ]
 }

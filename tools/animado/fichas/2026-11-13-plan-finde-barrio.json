@@ -4,8 +4,8 @@
  "escenas": [
   {
    "tipo": "gancho",
-   "etiqueta": "PLAN DE FINDE",
-   "titulo": "¿Sin plan para el finde? Aquí tienes *uno entero*",
+   "etiqueta": "PLAN DE FIN DE SEMANA",
+   "titulo": "¿Sin plan para el fin de semana? Aquí tienes *uno entero*",
    "sub": "sin salir del barrio",
    "dibujo": "calendario"
   },
@@ -21,7 +21,7 @@
    "n": 2,
    "titulo": "Paseo de colores",
    "dibujo": "lupa-colores",
-   "sub": "Buscad algo rojo, algo amarillo y algo verde por la calle"
+   "sub": "Busca con tu peque algo rojo, algo amarillo y algo verde"
   },
   {
    "tipo": "idea",
@@ -32,7 +32,7 @@
   },
   {
    "tipo": "cierre",
-   "frase": "Un finde entero, sin pantallas"
+   "frase": "Un fin de semana entero, sin pantallas"
   }
  ]
 }
