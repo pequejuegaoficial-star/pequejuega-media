@@ -3,7 +3,8 @@
    node tools/animado/reel.js fichas/mi-reel.json            → reels/<fecha>-<slug>.mp4
    node tools/animado/reel.js fichas/mi-reel.json --fotos    → una tira de fotogramas para revisar (no renderiza)
    node tools/animado/reel.js --catalogo                     → catalogo.jpg con todos los dibujos
-   Requisitos: playwright, ffmpeg, python3 con numpy y scipy (para tools/musica.py), fuente Poppins. */
+   Requisitos: playwright y ffmpeg. La fuente Poppins va incluida (fuentes/). La música usa tools/musica.py
+   (python3 con numpy y scipy); si falla, se usa una pista de music/. */
 const { chromium } = require('playwright');
 const { spawn, execFileSync } = require('child_process');
 const fs = require('fs'), path = require('path'), os = require('os');
@@ -34,7 +35,9 @@ async function abrir(b) {
   const pg = await b.newPage({ viewport: { width: 1080, height: 1920 } });
   pg.on('pageerror', e => { console.error('Error en la página:', e.message); process.exitCode = 1; });
   await pg.goto('file://' + path.join(DIR, 'pagina.html'));
-  await pg.evaluate(() => document.fonts.ready);
+  await pg.evaluate(async () => { await Promise.all([document.fonts.load('500 40px PoppinsPJ'), document.fonts.load('700 40px PoppinsPJ')]); await document.fonts.ready; });
+  const okFuente = await pg.evaluate(() => document.fonts.check('700 40px Poppins') || document.fonts.check('700 40px PoppinsPJ'));
+  if (!okFuente) throw new Error('No se pudo cargar la fuente Poppins (ni la del sistema ni tools/animado/fuentes/).');
   return pg;
 }
 const run = (cmd, args, stdin) => new Promise((res, rej) => { const p = spawn(cmd, args, { stdio: [stdin ? 'pipe' : 'ignore', 'inherit', 'inherit'] }); p.on('exit', c => c === 0 ? res() : rej(new Error(cmd + ' salió con ' + c))); if (stdin) stdin(p); });
@@ -84,10 +87,15 @@ const run = (cmd, args, stdin) => new Promise((res, rej) => { const p = spawn(cm
     await run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lista, '-c', 'copy', mudo]);
     // Música original: semilla ≡ 2 (mód 3) → 120 pulsos/min, los cortes caen a compás
     const semilla = ficha.semilla || 2 + 3 * (Math.abs([...ficha.slug].reduce((a, c) => a * 31 + c.charCodeAt(0) | 0, 7)) % 40);
-    await run('python3', [path.join(REPO, 'tools', 'musica.py'), wav, String(semilla), String(info.total)]);
+    let audio = wav;
+    try { await run('python3', [path.join(REPO, 'tools', 'musica.py'), wav, String(semilla), String(info.total)]); }
+    catch (e) {   // sin numpy/scipy: usa una de las pistas originales ya guardadas en music/
+      audio = path.join(REPO, 'music', `pista-0${1 + semilla % 5}.m4a`);
+      console.error('AVISO: tools/musica.py falló (' + e.message + '). Se usa ' + path.basename(audio) + '.');
+    }
     const out = args[1] || path.join(REPO, 'reels', `${ficha.fecha}-${ficha.slug}.mp4`);
     const parcial = out.replace(/\.mp4$/, '.parcial.mp4');
-    await run('ffmpeg', ['-v', 'error', '-y', '-i', mudo, '-i', wav, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-af', `volume=0.35,afade=t=out:st=${info.total - 1}:d=1`, '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', '-shortest', parcial]);
+    await run('ffmpeg', ['-v', 'error', '-y', '-i', mudo, '-i', audio, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-af', `volume=0.35,afade=t=out:st=${info.total - 1}:d=1`, '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', '-t', String(info.total), parcial]);
     fs.renameSync(parcial, out);
     console.log(`${out}  (${info.total} s, música semilla ${semilla})`);
   } finally { await b.close(); }

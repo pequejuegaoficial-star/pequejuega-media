@@ -9,6 +9,10 @@ node tools/animado/reel.js --catalogo                                           
 ```
 Si `require('playwright')` falla: `export NODE_PATH=$(npm root -g)`.
 
+No depende de nada instalado aparte de Playwright y ffmpeg: la fuente Poppins va en `fuentes/` (licencia OFL) y, si `tools/musica.py` falla por falta de numpy/scipy, el motor usa una pista de `music/` y lo avisa.
+
+Para comprobar la página de enlaces sin internet: `node tools/comprobar-pagina.js ig` (lista cada producto con su botón y su enlace, y falla si un enlace no lleva a amazon.es con el tag de la red). GitHub Pages no es accesible desde las sesiones en la nube y la página se dibuja con JavaScript, así que esta es la forma de verificarla.
+
 ## Ficha
 ```json
 { "fecha": "2026-11-18", "slug": "pintar-con-agua", "escenas": [
