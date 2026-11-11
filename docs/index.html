@@ -29,7 +29,7 @@
   .sub{margin:4px 0 0;font-size:14px}
   .cta{margin-top:12px;display:block;text-align:center;font-weight:800;font-size:17px;background:var(--ink);color:#fff;border-radius:12px;padding:12px}
   .cta.soon{background:#fff;color:var(--ink);border:3px dashed var(--ink)}
-  .social{display:flex;gap:10px;justify-content:center;margin:26px 0 8px}
+  .social{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 8px}
   .social a{color:var(--ink);font-weight:700;font-size:14px;text-decoration:none;background:#fff;border:3px solid var(--ink);border-radius:999px;padding:6px 12px}
   footer{font-size:12px;text-align:center;margin-top:18px}
   footer p{margin:6px 0}
@@ -49,6 +49,7 @@
     <a href="https://www.instagram.com/pequejuega.oficial/">Instagram</a>
     <a href="https://www.tiktok.com/@pequejuega.oficial">TikTok</a>
     <a href="https://www.youtube.com/channel/UC6-jpTvC-F6GhxGQD021jIg">YouTube</a>
+    <a href="https://www.facebook.com/profile.php?id=61596190209807">Facebook</a>
   </nav>
 
   <footer>
@@ -69,11 +70,12 @@ const TAG_POR_RED = {           // ID de seguimiento de Amazon por red (?r=ig / 
   ig: 'pequejuega-ig-21',
   tt: 'pequejuega-tt-21',
   yt: 'pequejuega-yt-21',
+  fb: 'pequejuega-21',            // Facebook: sin ID propio todavía, usa el general
   web: 'pequejuega-21'
 };
 const PRODUCTOS = [
-  { clave: 'LIBRO', id: 'libro', titulo: 'Mi primer libro para colorear: 100 dibujos', sub: 'Abecedario, números, formas y animales · 1–3 años', isbn: '9798140994099', asin: null, propio: true, portada: { t1: 'MI PRIMER LIBRO', t2: '100 dibujos', edad: '1–3 años' } },
-  { clave: 'LIBRO', id: 'libro-50', titulo: 'Mi primer libro para colorear: ¡Para colgar en la nevera!', sub: '50 dibujos por una sola cara para pintar, recortar y presumir · 1–3 años', isbn: '9798140999100', asin: null, propio: true, portada: { t1: 'MI PRIMER LIBRO', t2: 'para la nevera', edad: '1–3 años' } }
+  { clave: 'LIBRO', id: 'libro', titulo: 'Mi primer libro para colorear: 100 dibujos', sub: 'Abecedario, números, formas y animales · 1–3 años', isbn: '9798140994099', asin: 'B0HR9HHNVJ', propio: true, portada: { t1: 'MI PRIMER LIBRO', t2: '100 dibujos', edad: '1–3 años' } },
+  { clave: 'LIBRO', id: 'libro-50', titulo: 'Mi primer libro para colorear: ¡Para colgar en la nevera!', sub: '50 dibujos por una sola cara para pintar, recortar y presumir · 1–3 años', isbn: '9798140999100', asin: 'B0HR9GYJBP', propio: true, portada: { t1: 'MI PRIMER LIBRO', t2: 'para la nevera', edad: '1–3 años' } }
 ];
 /* ===== FIN DE LA CONFIGURACIÓN ===== */
 
