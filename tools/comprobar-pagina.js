@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Comprueba la página de enlaces (docs/index.html) sin salir a internet: la abre en local y lista
-   cada producto con su botón y su enlace. Uso: node tools/comprobar-pagina.js [ig|tt|yt]
+   cada producto con su botón y su enlace. Uso: node tools/comprobar-pagina.js [ig|tt|yt|fb]
    Sale con error si algún producto con ASIN no enlaza a amazon.es con el tag de la red. */
 const { chromium } = require('playwright');
 const path = require('path');
