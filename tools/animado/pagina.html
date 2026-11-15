@@ -46,6 +46,8 @@ const deco=i=>{const c=['#fff','#1f2937','#fff','#f472b6','#fff','#38bdf8','#fff
 const confeti=()=>{const c=['#f87171','#38bdf8','#4ade80','#f472b6','#fff','#fb923c'];let h='';for(let k=0;k<22;k++){const a=k/22*Math.PI*2,r=380+(k*67%260);h+=`<div style="position:absolute;left:530px;top:760px;width:${18+k%3*8}px;height:${14+k%2*14}px;background:${c[k%6]};border:4px solid #1f2937;border-radius:${k%3?4:99}px" data-a="burst:.35,${(Math.cos(a)*r).toFixed(0)},${(Math.sin(a)*r-220).toFixed(0)},${k%2?260:-260}"></div>`;}return h;};
 function arte(nombre,iconos){
   if(!nombre)return '';
+  if(nombre.startsWith('portada:')){const src=iconos[nombre];if(!src)throw new Error('Falta la '+nombre);
+    return `<div style="height:100%;display:flex;justify-content:center;align-items:center" data-a="pop:0;wig:2,.6"><img src="${src}" style="height:100%;border:8px solid #1f2937;border-radius:18px;box-shadow:14px 14px 0 #1f2937;transform:rotate(-3deg)"></div>`;}
   if(nombre.startsWith('icono:')){const k=nombre.slice(6),src=iconos[k];if(!src)throw new Error('Falta el icono '+k);
     let i=0;const inner=src.replace(/<svg[^>]*>|<\/svg>/g,'').replace(/<path stroke="none"[^>]*\/>/,'').replace(/<(path|circle|rect|line|ellipse)/g,(m)=>`${m} data-a="draw:${(.35+.22*i++).toFixed(2)},.7"`);
     return `<svg viewBox="-5 -5 34 34"><circle cx="12" cy="12" r="15.5" fill="#fff" stroke="#1f2937" stroke-width="1" data-a="pop:0;pulse:.02,.5"/><g fill="none" stroke="#1f2937" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" data-a="wig:3,.5">${inner}</g></svg>`;}

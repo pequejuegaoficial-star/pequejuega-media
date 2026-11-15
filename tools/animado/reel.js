@@ -20,6 +20,11 @@ function iconos(ficha) {            // SVG de los iconos "icono:nombre" (Tabler 
     if (!f) throw new Error(`Icono "${k}" no está en tools/animado/iconos. Cópialo de @tabler/icons (npm i @tabler/icons) o usa otro.`);
     out[k] = fs.readFileSync(f, 'utf8');
   }
+  for (const e of ficha.escenas) if (e.dibujo && e.dibujo.startsWith('portada:')) {   // portada real del libro: "portada:100" o "portada:50"
+    const k = e.dibujo.slice(8), f = path.join(DIR, 'portadas', 'libro-' + k + '.jpg');
+    if (!fs.existsSync(f)) throw new Error(`Portada "${k}" no está en tools/animado/portadas (hay: libro-100, libro-50).`);
+    out['portada:' + k] = 'data:image/jpeg;base64,' + fs.readFileSync(f).toString('base64');
+  }
   return out;
 }
 function validar(f) {
