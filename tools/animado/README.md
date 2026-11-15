@@ -33,3 +33,9 @@ Para comprobar la página de enlaces sin internet: `node tools/comprobar-pagina.
 
 ## Antes de publicar
 Mirar la tira de `--fotos`: texto sin cortar ni solapar y dibujo correcto. Después del render, comprobar duración y que el archivo tiene audio.
+
+## Vídeo largo mensual para YouTube (desde nov-2026)
+`node tools/video-mensual.js AAAA-MM` une los reels del mes en `reels/largos/AAAA-MM-recopilacion.mp4` y escribe al lado un `.txt` con título, descripción (con capítulos, "Publi", enlace a la página con `?r=yt` y aviso de afiliado) y ajustes. `--lista` solo enseña qué entraría. Tiene que durar más de 3 min 5 s (si no, YouTube lo trata como Short y los enlaces no son clicables): el script avisa. Se publica SOLO en YouTube, como vídeo normal y NO creado para niños; cuenta como 1 publicación de Metricool.
+
+## Página de enlaces: productos de afiliado (16-nov-2026)
+`docs/index.html` → `PRODUCTOS`: los libros propios y 30 productos de afiliado agrupados por palabra (`grupo`). Cada grupo tiene ancla con la palabra en minúsculas: `…/pequejuega-media/?r=ig#regalos`, `#rincon`, `#pintar`, `#letras`, `#lluvia`, `#bici`, `#circuito`, `#orden`, `#dormir`, `#torre`, `#mochila`. Datos y normas: doc del proyecto `claude/afiliados-30-productos.md`. Tras tocar la página: `node tools/comprobar-pagina.js ig` (y `yt`, `fb`).

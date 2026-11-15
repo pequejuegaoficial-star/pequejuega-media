@@ -13,7 +13,7 @@ const path = require('path');
   const publi = await p.$eval('#aviso-publi', e => !e.hidden);
   await b.close();
   console.log(JSON.stringify({ red, avisoPublicidadVisible: publi, productos: cartas }, null, 1));
-  const tag = { ig: 'pequejuega-ig-21', tt: 'pequejuega-tt-21', yt: 'pequejuega-yt-21' }[red] || 'pequejuega-21';
+  const tag = { ig: 'pequejuega-ig-21', tt: 'pequejuega-tt-21', yt: 'pequejuega-yt-21', fb: 'pequejuega-fb-21' }[red] || 'pequejuega-21';
   for (const c of cartas) if (c.enlace && !(c.enlace.startsWith('https://www.amazon.es/dp/') && c.enlace.endsWith('tag=' + tag))) errores.push('Enlace incorrecto en ' + c.id + ': ' + c.enlace);
   if (!cartas.length) errores.push('La página no muestra ningún producto');
   if (errores.length) { console.error('ERRORES:\n' + errores.join('\n')); process.exit(1); }
