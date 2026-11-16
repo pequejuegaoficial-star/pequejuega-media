@@ -1,0 +1,41 @@
+{
+ "fecha": "2026-11-22",
+ "slug": "regalo-sin-pilas",
+ "semilla": 11,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "IDEA PARA REGALAR",
+   "titulo": "Un regalo sin pilas *ni pantallas*",
+   "sub": "Para peques de 1 a 3 años",
+   "dibujo": "portada:50"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Crayones gruesos, fáciles de agarrar",
+   "dibujo": "cera",
+   "sub": "Para sus primeros garabatos"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Un cuaderno con una lámina por hoja",
+   "dibujo": "regalo",
+   "sub": "Se arranca sin estropear el siguiente dibujo"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Un sitio en la nevera para su obra",
+   "dibujo": "nevera",
+   "sub": "Lo que pinta, se cuelga y se celebra"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Nuestro cuaderno: ¡Para colgar en la nevera!",
+   "dibujo": "portada:50",
+   "boton": "Comenta LIBRO 👇 y te lo mando"
+  }
+ ]
+}

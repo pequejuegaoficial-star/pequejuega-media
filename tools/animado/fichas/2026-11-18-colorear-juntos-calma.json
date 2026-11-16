@@ -1,0 +1,41 @@
+{
+ "fecha": "2026-11-18",
+ "slug": "colorear-juntos-calma",
+ "semilla": 2,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "ACTIVIDAD DE CALMA",
+   "titulo": "10 minutos de calma: *colorear juntos*",
+   "sub": "Antes de cenar o de dormir",
+   "dibujo": "portada:100"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Siéntate a su lado y colorea tú también",
+   "dibujo": "lapices",
+   "sub": "Le encanta copiar lo que haces"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Pon nombre a lo que pinta",
+   "dibujo": "icono:palette",
+   "sub": "«¿De qué color es la vaca?»"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Cuando se canse, se cierra",
+   "dibujo": "luna-estrellas",
+   "sub": "Mañana sigue donde lo dejó"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Nuestro cuaderno: 100 dibujos grandes y sencillos",
+   "dibujo": "portada:100",
+   "boton": "Comenta LIBRO 👇 y te lo mando"
+  }
+ ]
+}

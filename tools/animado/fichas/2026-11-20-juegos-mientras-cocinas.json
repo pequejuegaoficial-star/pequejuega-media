@@ -1,0 +1,39 @@
+{
+ "fecha": "2026-11-20",
+ "slug": "juegos-mientras-cocinas",
+ "semilla": 5,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "3 IDEAS SIN PANTALLAS",
+   "titulo": "3 juegos mientras *preparas la cena*",
+   "sub": "Sin poner la tele",
+   "dibujo": "icono:chef-hat"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Lavar verduras en un bol",
+   "dibujo": "bol-verduras",
+   "sub": "Agua, un trapo y zanahorias enteras"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Emparejar calcetines",
+   "dibujo": "icono:sock",
+   "sub": "Por colores, mientras hierve el agua"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Ordenar recipientes por tamaño",
+   "dibujo": "torre-bloques",
+   "sub": "Del más grande al más pequeño"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para la próxima cena"
+  }
+ ]
+}

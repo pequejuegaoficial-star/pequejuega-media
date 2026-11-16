@@ -1,0 +1,39 @@
+{
+ "fecha": "2026-11-24",
+ "slug": "cabana-dia-de-lluvia",
+ "semilla": 14,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "DÍA DE LLUVIA",
+   "titulo": "¿Llueve? Monta *una cabaña* en casa",
+   "sub": "Con lo que ya tienes",
+   "dibujo": "nube-lluvia"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Dos sillas, una manta y cojines",
+   "dibujo": "cojines",
+   "sub": "Pinzas de la ropa para sujetarla"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Cuentos con linterna dentro",
+   "dibujo": "linterna",
+   "sub": "Apaga la luz del salón"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Merienda de picnic en la cabaña",
+   "dibujo": "picnic",
+   "sub": "Un plato para cada uno"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para el próximo día de lluvia"
+  }
+ ]
+}

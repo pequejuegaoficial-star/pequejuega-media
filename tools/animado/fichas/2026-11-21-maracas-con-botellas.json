@@ -1,0 +1,39 @@
+{
+ "fecha": "2026-11-21",
+ "slug": "maracas-con-botellas",
+ "semilla": 8,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "MANUALIDAD FÁCIL",
+   "titulo": "Maracas en *5 minutos*",
+   "sub": "Con una botella pequeña",
+   "dibujo": "maracas"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Un puñado de arroz en la botella",
+   "dibujo": "botella-calma",
+   "sub": "O lentejas, o macarrones"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Tapón cerrado con cinta adhesiva",
+   "dibujo": "cinta",
+   "sub": "Este paso lo hace siempre un adulto"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Stickers por fuera y a bailar",
+   "dibujo": "musica",
+   "sub": "Rápido, lento… ¡y quietos!"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para el fin de semana"
+  }
+ ]
+}
