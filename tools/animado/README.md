@@ -44,3 +44,9 @@ Mirar la tira de `--fotos`: texto sin cortar ni solapar y dibujo correcto. Despu
 - `ICONO_POR_ASIN` e `ICONOS`: dibujo de cada producto (Tabler Icons, MIT, copiados de `tools/animado/iconos/`). NO usar fotos de producto de Amazon: sus políticas solo las permiten a través de su API.
 - Láminas gratis: `docs/laminas/laminas-gratis-peque-juega.pdf` (4 láminas + 1 página con la dirección de la web; sin enlaces de afiliado dentro). Enlace directo para DM: `https://pequejuegaoficial-star.github.io/pequejuega-media/laminas/laminas-gratis-peque-juega.pdf`. Ancla en la página: `#laminas`.
 - Ordenador: 4 por fila; móvil: 2 por fila. Tras tocar la página: `node tools/comprobar-pagina.js ig` (y `yt`, `fb`).
+
+## TikTok a mano (desde el 16-nov-2026)
+TikTok ya NO se programa en Metricool (los vídeos publicados por API en la cuenta nueva se quedaban a 0 visualizaciones). Jorge los sube desde la app.
+- `tools/tiktok-semana.json`: lista de la semana `[{fecha, hora, archivo, titulo, texto, venta}]` (texto propio para TikTok: en los reels de venta, "Escríbenos LIBRO por Instagram", no "comenta LIBRO").
+- `node tools/pagina-tiktok.js` copia los vídeos a `docs/tiktok/` (borra los anteriores) y escribe `docs/tiktok.html`: página sin indexar ni enlazar, con "Descargar vídeo" y "Copiar texto" → https://pequejuegaoficial-star.github.io/pequejuega-media/tiktok.html
+- En Metricool, los proveedores de cada publicación son solo facebook, instagram y youtube.
