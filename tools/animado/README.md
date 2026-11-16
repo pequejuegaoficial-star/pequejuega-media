@@ -37,5 +37,10 @@ Mirar la tira de `--fotos`: texto sin cortar ni solapar y dibujo correcto. Despu
 ## Vídeo largo mensual para YouTube (desde nov-2026)
 `node tools/video-mensual.js AAAA-MM` une los reels del mes en `reels/largos/AAAA-MM-recopilacion.mp4` y escribe al lado un `.txt` con título, descripción (con capítulos, "Publi", enlace a la página con `?r=yt` y aviso de afiliado) y ajustes. `--lista` solo enseña qué entraría. Tiene que durar más de 3 min 5 s (si no, YouTube lo trata como Short y los enlaces no son clicables): el script avisa. Se publica SOLO en YouTube, como vídeo normal y NO creado para niños; cuenta como 1 publicación de Metricool.
 
-## Página de enlaces: productos de afiliado (16-nov-2026)
-`docs/index.html` → `PRODUCTOS`: los libros propios y 30 productos de afiliado agrupados por palabra (`grupo`). Cada grupo tiene ancla con la palabra en minúsculas: `…/pequejuega-media/?r=ig#regalos`, `#rincon`, `#pintar`, `#letras`, `#lluvia`, `#bici`, `#circuito`, `#orden`, `#dormir`, `#torre`, `#mochila`. Datos y normas: doc del proyecto `claude/afiliados-30-productos.md`. Tras tocar la página: `node tools/comprobar-pagina.js ig` (y `yt`, `fb`).
+## Página de enlaces (rediseñada el 16-nov-2026: cuadrícula y categorías)
+`docs/index.html`, todo se edita en el bloque CONFIGURACIÓN:
+- `PRODUCTOS`: libros propios (con `img` en `docs/img/`), la lámina gratis (`descarga: 'laminas/…pdf'`) y 30 productos de afiliado (`grupo` + `clave`).
+- `CATEGORIAS`: clave → [nombre corto, icono]. Cada categoría es un botón con ancla en minúsculas: `…/pequejuega-media/?r=ig#regalos`, `#rincon`, `#pintar`, `#letras`, `#lluvia`, `#bici`, `#circuito`, `#orden`, `#dormir`, `#torre`, `#mochila`. Al entrar con el ancla se abre esa categoría.
+- `ICONO_POR_ASIN` e `ICONOS`: dibujo de cada producto (Tabler Icons, MIT, copiados de `tools/animado/iconos/`). NO usar fotos de producto de Amazon: sus políticas solo las permiten a través de su API.
+- Láminas gratis: `docs/laminas/laminas-gratis-peque-juega.pdf` (4 láminas + 1 página con la dirección de la web; sin enlaces de afiliado dentro). Enlace directo para DM: `https://pequejuegaoficial-star.github.io/pequejuega-media/laminas/laminas-gratis-peque-juega.pdf`. Ancla en la página: `#laminas`.
+- Ordenador: 4 por fila; móvil: 2 por fila. Tras tocar la página: `node tools/comprobar-pagina.js ig` (y `yt`, `fb`).
