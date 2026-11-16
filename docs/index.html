@@ -179,6 +179,7 @@ for (const [clave, [nombre, icono]] of Object.entries(CATEGORIAS)) {
 }
 const pedida = (location.hash || '').slice(1).toUpperCase();
 elegir(CATEGORIAS[pedida] ? pedida : Object.keys(CATEGORIAS)[0], !!CATEGORIAS[pedida]);
+if (pedida && !CATEGORIAS[pedida]) { const d = document.getElementById(pedida.toLowerCase()); if (d) d.scrollIntoView({ block: 'center' }); }   // #laminas, #libro…
 </script>
 </body>
 </html>
