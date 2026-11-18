@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /* Comprueba la página de enlaces (docs/index.html) sin salir a internet: la abre en local y lista
    cada producto con su botón y su enlace. Uso: node tools/comprobar-pagina.js [ig|tt|yt|fb]
-   Sale con error si algún producto con ASIN no enlaza a amazon.es con el tag de la red. */
+   Sale con error si algún producto con ASIN no enlaza a amazon.es con el tag de la red
+   (las ediciones en inglés enlazan a amazon.com sin tag: no hay cuenta de afiliados en EE. UU.). */
 const { chromium } = require('playwright');
 const path = require('path');
 (async () => {
@@ -14,7 +15,7 @@ const path = require('path');
   await b.close();
   console.log(JSON.stringify({ red, avisoPublicidadVisible: publi, productos: cartas }, null, 1));
   const tag = { ig: 'pequejuega-ig-21', tt: 'pequejuega-tt-21', yt: 'pequejuega-yt-21', fb: 'pequejuega-fb-21' }[red] || 'pequejuega-21';
-  for (const c of cartas) if (c.enlace && !/^laminas\/[\w-]+\.pdf$/.test(c.enlace) && !(c.enlace.startsWith('https://www.amazon.es/dp/') && c.enlace.endsWith('tag=' + tag))) errores.push('Enlace incorrecto en ' + c.id + ': ' + c.enlace);
+  for (const c of cartas) if (c.enlace && !/^laminas\/[\w-]+\.pdf$/.test(c.enlace) && !/^https:\/\/www\.amazon\.com\/dp\/[A-Z0-9]{10}$/.test(c.enlace) && !(c.enlace.startsWith('https://www.amazon.es/dp/') && c.enlace.endsWith('tag=' + tag))) errores.push('Enlace incorrecto en ' + c.id + ': ' + c.enlace);
   if (!cartas.length) errores.push('La página no muestra ningún producto');
   if (errores.length) { console.error('ERRORES:\n' + errores.join('\n')); process.exit(1); }
 })();
