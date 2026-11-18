@@ -38,6 +38,8 @@
   .card .sp{flex:1;min-height:8px}
   .cta.soon{background:#fff;color:var(--ink);border:2px dashed var(--ink)}
   .cta.gratis{background:#16a34a}
+  .usa{margin:10px 0 4px;padding:10px 12px;background:#fff;border:2px solid var(--ink);border-radius:12px;font-size:13px;line-height:1.5}
+  .usa a{color:var(--ink);font-weight:800}
   .cat{display:flex;flex-direction:column;align-items:center;gap:4px;font:inherit;font-size:11px;font-weight:700;line-height:1.1;text-align:center;color:var(--ink);background:var(--paper);border:3px solid var(--ink);border-radius:14px;padding:0 0 6px;overflow:hidden;cursor:pointer}
   .cat img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-bottom:2px solid var(--ink)}
   .cat span{padding:0 3px}
@@ -63,6 +65,7 @@
     <h2 class="seccion">Nuestros cuadernos</h2>
     <p class="nota">Dibujos grandes de trazo grueso, para pintar juntos</p>
     <div class="grid" id="libros"></div>
+    <p class="usa" id="usa" hidden>🌎 <b>¿Estás en Latinoamérica o EE. UU.?</b> Nuestros cuadernos también están en Amazon.com: <span id="usa-enlaces"></span></p>
     <h2 class="seccion" id="ideas">Ideas para jugar y regalar</h2>
     <p class="nota">PUBLICIDAD · Elige un tema · Los botones llevan a Amazon con enlace de afiliado</p>
     <div class="cats" id="cats"></div>
@@ -88,6 +91,7 @@
    clave    → palabra clave del reel (sin tildes); los productos de afiliado con la misma clave forman una categoría
    id       → ancla única (#libro, #libro-50, #laminas). Las categorías tienen de ancla la clave en minúsculas (#regalos)
    asin     → ASIN de Amazon.es. null = todavía no publicado ("Muy pronto")
+   com      → ASIN del mismo libro en Amazon.com (para Latinoamérica y EE. UU.; sin ID de afiliado)
    tienda   → 'com' = edición en inglés en Amazon.com (sin ID de afiliado: solo hay cuenta en Amazon.es). Por defecto Amazon.es
    propio   → true si es nuestro (libro KDP o lámina gratis); false = producto de afiliado
    img      → foto propia (solo libros y láminas). Los productos de afiliado llevan un icono (ICONO_POR_ASIN):
@@ -102,9 +106,9 @@ const TAG_POR_RED = {           // ID de seguimiento de Amazon por red (?r=ig / 
   web: 'pequejuega-21'
 };
 const PRODUCTOS = [
-  { clave: 'LIBRO', id: 'libro', titulo: 'Mi primer libro para colorear: 100 dibujos', sub: 'Abecedario, números, formas y animales · 1–3 años', isbn: '9798140994099', asin: 'B0HR9HHNVJ', propio: true, img: 'img/libro-100.jpg', corto: '100 dibujos para aprender', edad: '1–3 años' },
-  { clave: 'LIBRO', id: 'libro-50', titulo: 'Mi primer libro para colorear: ¡Para colgar en la nevera!', sub: '50 dibujos por una sola cara para pintar, recortar y presumir · 1–3 años', isbn: '9798140999100', asin: 'B0HR9GYJBP', propio: true, img: 'img/libro-50.jpg', corto: '¡Para colgar en la nevera!', edad: '1–3 años' },
-  { clave: 'NAVIDAD', id: 'libro-navidad', titulo: 'Mi primer libro de Navidad: colorear, recortar y pegar', sub: '50 actividades por una sola cara · 2–5 años', isbn: null, asin: 'B0HRXCPXFQ', propio: true, img: 'img/libro-navidad.jpg', corto: 'Navidad: colorear, recortar y pegar', edad: '2–5 años' },
+  { clave: 'LIBRO', id: 'libro', titulo: 'Mi primer libro para colorear: 100 dibujos', sub: 'Abecedario, números, formas y animales · 1–3 años', isbn: '9798140994099', asin: 'B0HR9HHNVJ', com: 'B0HR9HHNVJ', propio: true, img: 'img/libro-100.jpg', corto: '100 dibujos para aprender', edad: '1–3 años' },
+  { clave: 'LIBRO', id: 'libro-50', titulo: 'Mi primer libro para colorear: ¡Para colgar en la nevera!', sub: '50 dibujos por una sola cara para pintar, recortar y presumir · 1–3 años', isbn: '9798140999100', asin: 'B0HR9GYJBP', com: 'B0HR9GYJBP', propio: true, img: 'img/libro-50.jpg', corto: '¡Para colgar en la nevera!', edad: '1–3 años' },
+  { clave: 'NAVIDAD', id: 'libro-navidad', titulo: 'Mi primer libro de Navidad: colorear, recortar y pegar', sub: '50 actividades por una sola cara · 2–5 años', isbn: null, asin: 'B0HRXCPXFQ', com: 'B0HRXCPXFQ', propio: true, img: 'img/libro-navidad.jpg', corto: 'Navidad: colorear, recortar y pegar', edad: '2–5 años' },
   { clave: 'ENGLISH', id: 'libro-navidad-en', titulo: 'My First Christmas Book: Color, Cut and Paste', sub: 'Edición en inglés · Amazon.com (EE. UU.) · 2–5 años', isbn: '9798143668072', asin: 'B0HS2VGD5J', tienda: 'com', propio: true, img: 'img/libro-navidad-en.jpg', corto: 'My First Christmas Book (inglés)', edad: '2–5 años · English' },
   { clave: 'LAMINA', id: 'laminas', titulo: 'Láminas gratis para colorear', corto: 'Láminas gratis para imprimir', sub: '4 láminas de nuestros cuadernos en PDF', descarga: 'laminas/laminas-gratis-peque-juega.pdf', img: 'img/laminas.jpg', edad: 'Gratis', propio: true },
   /* ---- Productos de afiliado (15-nov-2026, datos en claude/afiliados-30-productos.md). grupo = título de la sección; el ancla de la sección es la clave en minúsculas (#regalos) ---- */
@@ -170,6 +174,11 @@ for (const p of PRODUCTOS) {
   if (p.grupo) { el.dataset.cat = p.clave; productos.appendChild(el); } else libros.appendChild(el);
 }
 if (hayAfiliado) document.getElementById('aviso-publi').hidden = false;
+const usa = PRODUCTOS.filter(p => p.com && p.tienda !== 'com');
+if (usa.length) {
+  document.getElementById('usa-enlaces').innerHTML = usa.map(p => `<a href="https://www.amazon.com/dp/${encodeURIComponent(p.com)}" rel="noopener">${esc(p.corto)}</a>`).join(' · ');
+  document.getElementById('usa').hidden = false;
+}
 
 function elegir(clave, mover) {
   for (const b of cats.children) b.setAttribute('aria-pressed', b.dataset.cat === clave);
