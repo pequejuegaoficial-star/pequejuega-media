@@ -28,7 +28,7 @@ Para comprobar la página de enlaces sin internet: `node tools/comprobar-pagina.
 ## Dibujos
 - **Propios** (`dibujos.js`, ver `catalogo.jpg`): cada pieza lleva su animación en `data-a`. Las instrucciones para añadir uno nuevo están al principio del archivo.
 - **Iconos libres**: `"dibujo": "icono:nombre"` usa un icono de Tabler Icons (licencia MIT, sin atribución obligatoria; copia de la licencia en `iconos/`). Se dibuja trazo a trazo sobre un círculo blanco. Hay una selección en `iconos/`; para otro, `npm i @tabler/icons` y copiar `icons/outline/nombre.svg`.
-- **Portada real de los libros** (reels de venta): `"dibujo": "portada:100"` (100 dibujos para aprender, B0HR9HHNVJ) o `"dibujo": "portada:50"` (¡Para colgar en la nevera!, B0HR9GYJBP). Imágenes en `portadas/`, sacadas de las cubiertas finales de KDP. En los reels de venta usar SIEMPRE la portada real (gancho y cierre) en vez del dibujo genérico `libro-colorear`.
+- **Portada real de los libros** (reels de venta): `"dibujo": "portada:100"` (100 dibujos para aprender, B0HR9HHNVJ) o `"dibujo": "portada:50"` (¡Para colgar en la nevera!, B0HR9GYJBP) o `"dibujo": "portada:navidad"` (Mi primer libro de Navidad, B0HRXCPXFQ; obligatoria en todo reel de venta o de actividades de Navidad, decisión de Jorge 18-nov). Imágenes en `portadas/`, sacadas de las cubiertas finales de KDP. En los reels de venta usar SIEMPRE la portada real (gancho y cierre) en vez del dibujo genérico `libro-colorear`.
 - No usar bancos con licencia CC BY o CC BY-SA (OpenMoji, Twemoji…) sin poner la atribución que exigen, ni nada sin licencia clara. Nunca personajes ni marcas de terceros.
 
 ## Antes de publicar
