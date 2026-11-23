@@ -1,0 +1,42 @@
+{
+ "fecha": "2026-11-25",
+ "slug": "re-una-hora-sin-tablet",
+ "semilla": 14,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "IDEA SIN PANTALLAS",
+   "titulo": "3 juegos *gratis* sin pedir la tablet",
+   "sub": "Y 4 láminas de regalo al final",
+   "dibujo": "icono:device-tv-off"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Portería con dos cojines",
+   "dibujo": "pelota",
+   "sub": "Una pelota blanda y a meter gol"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Carrera de carritos por el pasillo",
+   "dibujo": "coche",
+   "sub": "Salida y meta con cinta de papel"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Colorear tumbados en el suelo",
+   "dibujo": "cera",
+   "sub": "Un papel grande y crayones"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para la próxima tarde en casa",
+   "boton": "Comenta LAMINA 👇 y te mando 4 láminas gratis"
+  }
+ ]
+}

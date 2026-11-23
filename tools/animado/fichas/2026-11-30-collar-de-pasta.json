@@ -1,0 +1,42 @@
+{
+ "fecha": "2026-11-30",
+ "slug": "collar-de-pasta",
+ "semilla": 11,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "MANUALIDAD FÁCIL",
+   "titulo": "Manualidad *gratis* con 3 cosas de casa",
+   "sub": "Y 4 láminas de regalo al final",
+   "dibujo": "plastilina"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Pinta la pasta con marcadores",
+   "dibujo": "lapices",
+   "sub": "Sobre papel de periódico"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Ensártala en un cordón grueso",
+   "dibujo": "brocheta",
+   "sub": "Con un adulto al lado: piezas pequeñas"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Lúcelo o regálalo",
+   "dibujo": "corazon",
+   "sub": "Un collar para cada persona de la casa"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdala para la próxima tarde en casa",
+   "boton": "Comenta LAMINA 👇 y te mando 4 láminas gratis"
+  }
+ ]
+}

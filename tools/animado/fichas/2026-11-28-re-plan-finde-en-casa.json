@@ -1,0 +1,42 @@
+{
+ "fecha": "2026-11-28",
+ "slug": "re-plan-finde-en-casa",
+ "semilla": 20,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "PLAN DE FIN DE SEMANA",
+   "titulo": "Plan de fin de semana *gratis* en casa",
+   "sub": "Y 4 láminas de regalo al final",
+   "dibujo": "casa-carton"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Picnic en el suelo del salón",
+   "dibujo": "picnic",
+   "sub": "Un mantel, sándwiches y cojines"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Busca el tesoro con pistas dibujadas",
+   "dibujo": "tesoro",
+   "sub": "Dibuja dónde está la siguiente pista"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Teatro de sombras con linterna",
+   "dibujo": "sombras-manos",
+   "sub": "Apaga la luz y adivina el animal"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para el fin de semana",
+   "boton": "Comenta LAMINA 👇 y te mando 4 láminas gratis"
+  }
+ ]
+}

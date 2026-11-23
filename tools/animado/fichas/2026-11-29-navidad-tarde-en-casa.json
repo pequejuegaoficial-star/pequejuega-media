@@ -1,0 +1,43 @@
+{
+ "fecha": "2026-11-29",
+ "slug": "navidad-tarde-en-casa",
+ "semilla": 8,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "PLAN DE DOMINGO",
+   "titulo": "Una tarde de *Navidad* sin pantallas",
+   "sub": "Para peques de 2 a 5 años",
+   "dibujo": "portada:navidad"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Colorea el árbol y recórtalo",
+   "dibujo": "arbol-navidad",
+   "sub": "Tijeras de punta redonda, siempre contigo"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Pega copos de papel en la ventana",
+   "dibujo": "copo-nieve",
+   "sub": "Con un trocito de cinta adhesiva"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Haz una corona para la cena",
+   "dibujo": "corona-papel",
+   "sub": "Recorta, pega y decora a su manera"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Nuestro cuaderno: Mi primer libro de Navidad",
+   "dibujo": "portada:navidad",
+   "boton": "Comenta LIBRO 👇 y te lo mando"
+  }
+ ]
+}

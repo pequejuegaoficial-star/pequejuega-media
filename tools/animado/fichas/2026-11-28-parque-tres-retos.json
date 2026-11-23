@@ -1,0 +1,42 @@
+{
+ "fecha": "2026-11-28",
+ "slug": "parque-tres-retos",
+ "semilla": 5,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "RUTA EN EL PARQUE",
+   "titulo": "3 juegos *gratis* para el parque",
+   "sub": "Y 4 láminas de regalo al final",
+   "dibujo": "sol"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Carrera de árbol a árbol",
+   "dibujo": "arbol",
+   "sub": "Tú dices el árbol y tu peque corre"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Camina sobre una línea sin caerte",
+   "dibujo": "equilibrio",
+   "sub": "Una raya del suelo, siempre de la mano"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Busca 5 cosas redondas",
+   "dibujo": "lupa-colores",
+   "sub": "Piedras, hojas, una pelota…"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para tu próxima visita al parque",
+   "boton": "Comenta LAMINA 👇 y te mando 4 láminas gratis"
+  }
+ ]
+}

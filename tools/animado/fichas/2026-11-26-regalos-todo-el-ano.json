@@ -1,0 +1,50 @@
+{
+ "fecha": "2026-11-26",
+ "slug": "regalos-todo-el-ano",
+ "semilla": 2,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "PUBLICIDAD",
+   "titulo": "4 regalos que se usan *todo el año*",
+   "sub": "Para peques de 2 a 5 años",
+   "dibujo": "regalo"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Bloques con imán para construir",
+   "dibujo": "torre-bloques",
+   "sub": "Torres, casas y formas en el suelo"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Ladrillos grandes para manos pequeñas",
+   "dibujo": "icono:blocks",
+   "sub": "Encajar, apilar y volver a empezar"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Un tren de madera con vías",
+   "dibujo": "tren",
+   "sub": "Un circuito nuevo cada día"
+  },
+  {
+   "tipo": "idea",
+   "n": 4,
+   "titulo": "Una cocinita para jugar a cocinar",
+   "dibujo": "cocinita",
+   "sub": "Juego de imitar: te sirve la merienda"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Los 4 regalos, en un solo sitio",
+   "dibujo": "regalo",
+   "boton": "Lista completa en el enlace del perfil"
+  }
+ ]
+}

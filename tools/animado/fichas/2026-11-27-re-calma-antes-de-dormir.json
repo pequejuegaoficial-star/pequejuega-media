@@ -1,0 +1,42 @@
+{
+ "fecha": "2026-11-27",
+ "slug": "re-calma-antes-de-dormir",
+ "semilla": 17,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "ACTIVIDAD DE CALMA",
+   "titulo": "3 juegos *gratis* para la hora de dormir",
+   "sub": "Y 4 láminas de regalo al final",
+   "dibujo": "luna-estrellas"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Pompas a cámara lenta",
+   "dibujo": "pompas",
+   "sub": "Sóplalas despacio y míralas caer"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Busca 5 cosas azules en susurros",
+   "dibujo": "gota",
+   "sub": "Habla bajito: tu peque te imita"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Una pizza en su espalda",
+   "dibujo": "icono:pizza",
+   "sub": "Amasa, pon queso con los dedos… ¡y al horno!"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo para esta noche",
+   "boton": "Comenta LAMINA 👇 y te mando 4 láminas gratis"
+  }
+ ]
+}

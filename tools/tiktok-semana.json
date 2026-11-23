@@ -1,12 +1,82 @@
 [
- {"fecha": "2026-11-18", "hora": "18:00", "archivo": "2026-11-18-colorear-juntos-calma.mp4", "titulo": "10 minutos de calma: colorear juntos", "venta": true,
-  "texto": "¿Buscas 10 minutos de calma antes de cenar? 🖍️\n\nSiéntate a su lado y colorea tú también, pon nombre a lo que pinta y, cuando se canse, se cierra: mañana sigue donde lo dejó.\n\n📘 Es nuestro cuaderno «Mi primer libro para colorear» (1–3 años, 100 dibujos). Escríbenos LIBRO por Instagram (@pequejuega.oficial) y te mandamos el enlace.\n\n#actividadesparaniños #juegossinpantallas #crianza #mamás #papás #ideasparapadres"},
- {"fecha": "2026-11-20", "hora": "10:00", "archivo": "2026-11-20-juegos-mientras-cocinas.mp4", "titulo": "3 juegos mientras preparas la cena", "venta": false,
-  "texto": "3 juegos para tu peque mientras preparas la cena 🥕\n\nLavar verduras en un bol con agua, emparejar calcetines por colores y ordenar recipientes del más grande al más pequeño. Sin poner la tele.\n\nGuárdalo y síguenos @pequejuega.oficial\n\n#actividadesparaniños #juegossinpantallas #crianza #mamás #papás #ideasparapadres"},
- {"fecha": "2026-11-21", "hora": "18:00", "archivo": "2026-11-21-maracas-con-botellas.mp4", "titulo": "Maracas caseras en 5 minutos", "venta": false,
-  "texto": "Maracas caseras en 5 minutos 🎶\n\nUn puñado de arroz en una botella pequeña, el tapón bien cerrado con cinta adhesiva (ese paso lo hace siempre un adulto) y stickers por fuera. Después, a bailar: rápido, lento… ¡y quietos!\n\nGuárdalo y síguenos @pequejuega.oficial\n\n#actividadesparaniños #juegossinpantallas #manualidadesparaniños #crianza #mamás #papás #ideasparapadres"},
- {"fecha": "2026-11-22", "hora": "10:00", "archivo": "2026-11-22-regalo-sin-pilas.mp4", "titulo": "Un regalo sin pilas ni pantallas", "venta": true,
-  "texto": "¿Buscas un regalo sin pilas ni pantallas para tu peque? 🎁\n\nCrayones gruesos fáciles de agarrar, un cuaderno con una lámina por hoja y un sitio en la nevera para colgar lo que pinta.\n\n📘 Es nuestro cuaderno «¡Para colgar en la nevera!» (1–3 años, 50 dibujos por una sola cara). Escríbenos LIBRO por Instagram (@pequejuega.oficial) y te mandamos el enlace.\n\n#actividadesparaniños #juegossinpantallas #crianza #mamás #papás #ideasparapadres"},
- {"fecha": "2026-11-24", "hora": "18:00", "archivo": "2026-11-24-cabana-dia-de-lluvia.mp4", "titulo": "Día de lluvia: una cabaña en casa", "venta": false,
-  "texto": "¿Llueve y no hay plan? Monta una cabaña en casa ☔\n\nDos sillas, una manta, pinzas de la ropa y cojines. Dentro: cuentos con linterna y merienda de picnic, un plato para cada uno.\n\nGuárdalo y síguenos @pequejuega.oficial\n\n#actividadesparaniños #juegossinpantallas #crianza #mamás #papás #ideasparapadres"}
+ {
+  "fecha": "2026-11-25",
+  "hora": "18:00",
+  "archivo": "2026-11-25-re-una-hora-sin-tablet.mp4",
+  "titulo": "3 juegos gratis sin pedir la tablet",
+  "venta": false,
+  "afiliado": false,
+  "reedicion": true,
+  "original": "4-nov «3 cosas para 1 hora sin tablet» (TikTok 7704378324994329888)",
+  "estado": "pendiente",
+  "texto": "3 juegos gratis para que tu peque no pida la tablet 📵\n\nPortería con dos cojines, carrera de carritos por el pasillo y colorear tumbados en el suelo.\n\nLáminas gratis: escríbenos LAMINA por Instagram @pequejuega.oficial\n\n#actividadesparaniños #juegossinpantallas #crianza #ideasparapadres #mamás"
+ },
+ {
+  "fecha": "2026-11-26",
+  "hora": "10:00",
+  "archivo": "2026-11-26-regalos-todo-el-ano.mp4",
+  "titulo": "Publicidad · 4 regalos que se usan todo el año",
+  "venta": true,
+  "afiliado": true,
+  "reedicion": false,
+  "estado": "pendiente",
+  "texto": "Publicidad · 4 regalos para peques de 2 a 5 años que se usan todo el año 🎁\n\nBloques con imán, ladrillos grandes, un tren de madera con vías y una cocinita para jugar a cocinar.\n\nEnlace en nuestro Instagram @pequejuega.oficial\n\n#regalosparaniños #juegossinpantallas #crianza #ideasparapadres"
+ },
+ {
+  "fecha": "2026-11-27",
+  "hora": "18:00",
+  "archivo": "2026-11-27-re-calma-antes-de-dormir.mp4",
+  "titulo": "3 juegos gratis para la hora de dormir",
+  "venta": false,
+  "afiliado": false,
+  "reedicion": true,
+  "original": "5-nov calma antes de dormir (TikTok 7704611102373547296)",
+  "estado": "pendiente",
+  "texto": "3 juegos gratis para la hora de dormir 🌙\n\nPompas a cámara lenta, buscar 5 cosas azules en susurros y una pizza en su espalda.\n\nLáminas gratis: escríbenos LAMINA por Instagram @pequejuega.oficial\n\n#rutinadenoche #juegossinpantallas #crianza #ideasparapadres"
+ },
+ {
+  "fecha": "2026-11-28",
+  "hora": "10:00",
+  "archivo": "2026-11-28-parque-tres-retos.mp4",
+  "titulo": "3 juegos gratis para el parque",
+  "venta": false,
+  "afiliado": false,
+  "reedicion": false,
+  "estado": "pendiente",
+  "texto": "3 juegos gratis para el parque 🌳\n\nCarrera de árbol a árbol, caminar sobre una línea sin caerse (de la mano) y buscar 5 cosas redondas.\n\nLáminas gratis: escríbenos LAMINA por Instagram @pequejuega.oficial\n\n#juegosalairelibre #juegossinpantallas #crianza #ideasparapadres"
+ },
+ {
+  "fecha": "2026-11-28",
+  "hora": "18:00",
+  "archivo": "2026-11-28-re-plan-finde-en-casa.mp4",
+  "titulo": "Plan de fin de semana gratis en casa",
+  "venta": false,
+  "afiliado": false,
+  "reedicion": true,
+  "original": "6-nov plan de finde en casa (TikTok 7704981846605516065)",
+  "estado": "pendiente",
+  "texto": "Plan de fin de semana gratis en casa 🧺\n\nPicnic en el suelo del salón, búsqueda del tesoro con pistas dibujadas y teatro de sombras con linterna.\n\nLáminas gratis: escríbenos LAMINA por Instagram @pequejuega.oficial\n\n#planesconniños #juegossinpantallas #crianza #ideasparapadres"
+ },
+ {
+  "fecha": "2026-11-29",
+  "hora": "18:00",
+  "archivo": "2026-11-29-navidad-tarde-en-casa.mp4",
+  "titulo": "Una tarde de Navidad sin pantallas",
+  "venta": true,
+  "afiliado": false,
+  "reedicion": false,
+  "estado": "pendiente",
+  "texto": "Una tarde de Navidad sin pantallas 🎄\n\nColorea un árbol y recórtalo, pega copos de papel en la ventana y haz una corona para la cena.\n\n📘 Es nuestro cuaderno «Mi primer libro de Navidad» (2–5 años). Escríbenos LIBRO por Instagram (@pequejuega.oficial) y te mandamos el enlace.\n\n#navidadconniños #manualidadesparaniños #juegossinpantallas #ideasparapadres"
+ },
+ {
+  "fecha": "2026-11-30",
+  "hora": "18:00",
+  "archivo": "2026-11-30-collar-de-pasta.mp4",
+  "titulo": "Collar de pasta: manualidad gratis",
+  "venta": false,
+  "afiliado": false,
+  "reedicion": false,
+  "estado": "pendiente",
+  "texto": "Manualidad gratis con 3 cosas de casa 🎨\n\nPasta pintada con marcadores, un cordón grueso y listo: un collar para cada persona de la casa. Con un adulto al lado, son piezas pequeñas.\n\nLáminas gratis: escríbenos LAMINA por Instagram @pequejuega.oficial\n\n#manualidadesparaniños #juegossinpantallas #crianza #ideasparapadres"
+ }
 ]

@@ -18,7 +18,7 @@ const tarjetas = lista.map((x, i) => {
 <a class="b" href="tiktok/${x.archivo}" download>1 · Descargar vídeo</a>
 <button class="b" data-i="${i}">2 · Copiar texto</button>
 <textarea id="t${i}" readonly rows="7">${esc(x.texto)}</textarea>
-${x.venta ? '<p class="n">Reel de venta del cuaderno: en «Más opciones» → «Divulgación de contenido» marca «Tu marca».</p>' : ''}</section>`;
+${x.afiliado ? '<p class="n">Reel de AFILIADO: en «Divulgación de contenido» marca «Contenido de marca» (contenido comercial de terceros).</p>' : x.venta ? '<p class="n">Reel de venta del cuaderno: en «Más opciones» → «Divulgación de contenido» marca «Tu marca».</p>' : ''}</section>`;
 }).join('\n');
 const html = `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>Peque Juega · TikTok a mano</title>
