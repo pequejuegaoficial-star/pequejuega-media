@@ -48,8 +48,8 @@ txt = [
     'Hoja «Reels»: una fila por reel. Celdas en AZUL = datos que se escriben a mano o los pone la tarea semanal (Metricool / TikTok Studio). Celdas en negro = fórmulas.',
     'Hoja «Resumen»: n, media y mediana de visualizaciones de Instagram por hora, tipo de día, día de la semana y combinación. Con menos de 5 reels por grupo pone «muestra insuficiente».',
     'Hoja «Actividad Metricool»: cuándo está conectada la audiencia según Metricool (mejor hora para publicar, 16–22 nov 2026). Con 0–2 seguidores propios, es sobre todo el patrón general de cada red, no el nuestro. Los pesos de la puntuación combinada (celdas amarillas) se pueden cambiar.',
-    'Hoja «Calendario»: el plan de diciembre (10:00 = hora a explotar; 16:00 = hora a explorar). Se revisa cada lunes con el Resumen.',
-    'Regla de decisión: cuando una hora o tipo de día tenga n ≥ 5 en los dos grupos y su mediana sea ≥ 20 % mayor durante 2 semanas seguidas, pasa a ser la hora por defecto; la otra se sigue probando en 1 de cada 3 reels.',
+    'Hoja «Calendario»: el plan de diciembre. Test de 3 horas (10:00, 16:00 y 20:00) repartidas por igual y rotando, con un sábado por semana para cada hora. Cada lunes la tarea mira el Resumen y, si una hora va claramente detrás, le quita huecos poco a poco (ver «Regla de decisión»).',
+    'Regla de decisión (gradual): (1) cada hora necesita n ≥ 4 antes de tocar nada; (2) si una hora va ≥ 20 % por debajo de la mejor en mediana de visualizaciones a 3–9 días, pierde 1 hueco por semana en favor de la mejor; (3) ninguna hora baja de 1 reel por semana hasta n ≥ 6; (4) con empate (< 20 %), desempata la que más comentarios LIBRO/LAMINA, guardados y compartidos tenga (señales de venta); (5) un solo cambio por semana.',
     'Cuidado: las visualizaciones son ACUMULADAS el día de la medición; los reels recientes llevan menos días (columna «Días publicado»). Comparar solo reels con ≥ 2 días.',
     'TikTok: los vídeos del 4 al 16-nov se publicaron por la API de Metricool y se quedaron en 0 (problema de la API): van vacíos y no cuentan.',
     'YouTube: Metricool no da visualizaciones por vídeo de este canal; solo el total diario del canal (ver hoja «YouTube canal»).',
@@ -115,14 +115,14 @@ def bloque(fila, titulo, col, valores):
     return fila + 3 + len(valores)
 for c, w in zip('ABCDEFG', [22, 6, 14, 14, 14, 14, 26]): s.column_dimensions[c].width = w
 f0 = 3
-f0 = bloque(f0, 'Por hora', 'D', ['10:00', '16:00', '18:00'])
+f0 = bloque(f0, 'Por hora', 'D', ['10:00', '16:00', '18:00', '20:00'])
 f0 = bloque(f0, 'Por tipo de día', 'C', ['laborable', 'fin de semana'])
 f0 = bloque(f0, 'Por día de la semana', 'B', DIAS)
 f0 = bloque(f0, 'Por tipo de reel', 'F', ['gratis', 'cuaderno', 'afiliado'])
 f0 = bloque(f0, 'Con o sin reglas de retención (antes/después: no es un experimento)', 'H', ['no', 'sí'])
 s.cell(f0, 1, 'Combinaciones (solo descriptivo)').font = BB
 cab(s, f0 + 1, ['Tipo de día', 'Hora', 'n', 'Mediana visualizaciones'])
-for j, (d, h) in enumerate([(d, h) for d in ('laborable', 'fin de semana') for h in ('10:00', '16:00', '18:00')]):
+for j, (d, h) in enumerate([(d, h) for d in ('laborable', 'fin de semana') for h in ('10:00', '16:00', '18:00', '20:00')]):
     rr = f0 + 2 + j
     s.cell(rr, 1, d); s.cell(rr, 2, h)
     s.cell(rr, 3, f'=SUMPRODUCT({cond}*({RNG("C")}=A{rr})*({RNG("D")}=B{rr}))')
@@ -160,7 +160,7 @@ for red in ('instagram', 'youtube', 'tiktok', 'combinada'):
     fila += 11
 a.cell(fila, 1, 'Media semanal de la puntuación combinada por hora').font = BB
 cab(a, fila + 1, ['Hora', 'Media'])
-for j, h in enumerate((10, 12, 16, 17, 18)):
+for j, h in enumerate((10, 12, 16, 17, 18, 20)):
     rr = fila + 2 + j
     a.cell(rr, 1, f'{h}h'); a.cell(rr, 2, f'=AVERAGE({L(2 + h)}{pos["combinada"]}:{L(2 + h)}{pos["combinada"] + 6})').number_format = '0.00'
 a.column_dimensions['A'].width = 16
@@ -202,6 +202,7 @@ if os.path.exists(CAL):
     k.cell(n + 3, 1, 'Cupo del plan gratis').font = BB; k.cell(n + 3, 5, 20).font = BLUE
     k.cell(n + 4, 1, 'Reserva').font = BB; k.cell(n + 4, 5, f'=E{n + 3}-E{n + 2}').font = BB
     k.conditional_formatting.add(f'D3:D{n}', CellIsRule(operator='equal', formula=['"16:00"'], fill=PatternFill('solid', fgColor='DBEAFE')))
+    k.conditional_formatting.add(f'D3:D{n}', CellIsRule(operator='equal', formula=['"20:00"'], fill=PatternFill('solid', fgColor='FCE7F3')))
 
 for w in wb.worksheets:
     for row in w.iter_rows():
