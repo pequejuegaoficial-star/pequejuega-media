@@ -1,0 +1,43 @@
+{
+ "fecha": "2026-12-01",
+ "slug": "cuenta-atras-navidad",
+ "semilla": 23,
+ "ganchoSinEntrada": true,
+ "ritmoRapido": true,
+ "escenas": [
+  {
+   "tipo": "gancho",
+   "etiqueta": "CUENTA ATRÁS",
+   "titulo": "Cuenta atrás para Navidad: 3 ideas *gratis*",
+   "sub": "Y 4 láminas de regalo al final",
+   "dibujo": "portada:navidad"
+  },
+  {
+   "tipo": "idea",
+   "n": 1,
+   "titulo": "Una cadena de papel: un eslabón al día",
+   "dibujo": "cadena-papel",
+   "sub": "Tu peque quita uno cada mañana"
+  },
+  {
+   "tipo": "idea",
+   "n": 2,
+   "titulo": "Un sobre por día con un juego dentro",
+   "dibujo": "icono:mail",
+   "sub": "«Hoy: baile de 1 minuto» o «hoy: cuento extra»"
+  },
+  {
+   "tipo": "idea",
+   "n": 3,
+   "titulo": "Colorea un dibujo de Navidad cada tarde",
+   "dibujo": "icono:star",
+   "sub": "Cuélgalos juntos en una pared"
+  },
+  {
+   "tipo": "cierre",
+   "frase": "Guárdalo y empiezan hoy",
+   "dibujo": "portada:navidad",
+   "boton": "Comenta LAMINA 👇 y te mando 4 láminas gratis"
+  }
+ ]
+}
