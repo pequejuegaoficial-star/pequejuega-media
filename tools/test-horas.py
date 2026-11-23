@@ -65,8 +65,8 @@ ws['B14'] = None
 filas = list(csv.DictReader(open(CSV, encoding='utf-8')))
 r = wb.create_sheet('Reels')
 cols = ['Fecha', 'Día', 'Tipo de día', 'Hora', 'Formato', 'Tipo', 'Animado', 'Reglas de retención', 'En el test', 'Post Metricool',
-        'Fecha medición', 'Días publicado', 'IG visualizaciones', 'IG tiempo medio (s)', 'IG abandono < 3 s', 'TikTok visualizaciones', 'Medible (≥ 2 días)']
-cab(r, 1, cols, [12, 11, 12, 8, 22, 11, 9, 11, 9, 13, 13, 10, 13, 12, 12, 13, 11])
+        'Fecha medición', 'Días publicado', 'IG visualizaciones', 'IG tiempo medio (s)', 'IG abandono < 3 s', 'TikTok visualizaciones', 'Medible (≥ 2 días)', 'Tipo de gancho']
+cab(r, 1, cols, [12, 11, 12, 8, 22, 11, 9, 11, 9, 13, 13, 10, 13, 12, 12, 13, 11, 20])
 for i, f in enumerate(filas, 2):
     fecha = dt.date.fromisoformat(f['fecha'])
     r.cell(i, 1, fecha).number_format = 'dd/mm/yyyy'
@@ -81,12 +81,13 @@ for i, f in enumerate(filas, 2):
     ab = num(f['ig_abandono_3s_pct']); r.cell(i, 15, ab / 100 if isinstance(ab, float) else None).number_format = '0.0%'
     tk = num(f['tiktok_visualizaciones']); r.cell(i, 16, tk if (tk and fecha >= dt.date(2026, 11, 18)) else None)
     r.cell(i, 17, f'=IF(AND(ISNUMBER(M{i}),ISNUMBER(L{i})),IF(L{i}>=2,"sí","no"),"")')
+    r.cell(i, 18, f.get('gancho_tipo', ''))
     r.cell(i, 14).number_format = '0.0'
-    for c in range(1, 18):
+    for c in range(1, 19):
         r.cell(i, c).border = BOX
-        r.cell(i, c).font = BLUE if c in (1, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16) else B
+        r.cell(i, c).font = BLUE if c in (1, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 18) else B
 last = len(filas) + 1
-r.freeze_panes = 'B2'; r.auto_filter.ref = f'A1:Q{last}'
+r.freeze_panes = 'B2'; r.auto_filter.ref = f'A1:R{last}'
 r.conditional_formatting.add(f'M2:M{last}', ColorScaleRule(start_type='min', start_color='FEE2E2', mid_type='percentile', mid_value=50, mid_color='FFFFFF', end_type='max', end_color='BBF7D0'))
 r.cell(1, 13).comment = Comment('Metricool IGRE23, acumulado a la fecha de medición.', 'Claude')
 r.cell(1, 15).comment = Comment('Metricool IGRE30: % que se va antes de 3 s. Cuanto más bajo, mejor.', 'Claude')
@@ -95,20 +96,23 @@ wb['Leyenda']['B14'].font = B
 
 # ---------------------------------------------------------------- 3. Resumen
 s = wb.create_sheet('Resumen')
-s['A1'] = 'Resumen de Instagram (solo reels del test, medibles y con visualizaciones)'; s['A1'].font = T
+s['A1'] = 'Resumen de Instagram (reels medibles; horas y días: solo reels del test; ganchos: todos)'; s['A1'].font = T
 RNG = lambda c: f'Reels!${c}$2:${c}${last}'
-cond = f'({RNG("I")}="sí")*({RNG("Q")}="sí")'
-def bloque(fila, titulo, col, valores):
+COND_TEST = f'({RNG("I")}="sí")*({RNG("Q")}="sí")'
+COND_TODOS = f'({RNG("Q")}="sí")'
+cond = COND_TEST
+def bloque(fila, titulo, col, valores, todos=False):
+    cnd = COND_TODOS if todos else COND_TEST
     s.cell(fila, 1, titulo).font = BB
     cab(s, fila + 1, ['Grupo', 'n', 'Media visualizaciones', 'Mediana visualizaciones', 'Mediana tiempo medio (s)', 'Mediana abandono < 3 s', 'Lectura'])
     for j, v in enumerate(valores):
         rr = fila + 2 + j
         s.cell(rr, 1, v).font = B
-        s.cell(rr, 2, f'=SUMPRODUCT({cond}*({RNG(col)}=A{rr}))')
-        s.cell(rr, 3, f'=IFERROR(SUMPRODUCT({cond}*({RNG(col)}=A{rr})*{RNG("M")})/B{rr},"")').number_format = '0'
+        s.cell(rr, 2, f'=SUMPRODUCT({cnd}*({RNG(col)}=A{rr}))')
+        s.cell(rr, 3, f'=IFERROR(SUMPRODUCT({cnd}*({RNG(col)}=A{rr})*{RNG("M")})/B{rr},"")').number_format = '0'
         for c, colm, fmt in ((4, 'M', '0'), (5, 'N', '0.0'), (6, 'O', '0.0%')):
             ref = f'{L(c)}{rr}'
-            s[ref] = ArrayFormula(ref, f'=IFERROR(MEDIAN(IF(({RNG("I")}="sí")*({RNG("Q")}="sí")*({RNG(col)}=A{rr}),{RNG(colm)})),"")')
+            s[ref] = ArrayFormula(ref, f'=IFERROR(MEDIAN(IF({cnd}*({RNG(col)}=A{rr}),{RNG(colm)})),"")')
             s[ref].number_format = fmt
         s.cell(rr, 7, f'=IF(B{rr}<{MIN_N},"muestra insuficiente (n<{MIN_N})","n suficiente")')
         for c in range(1, 8): s.cell(rr, c).border = BOX; s.cell(rr, c).font = B
@@ -119,6 +123,7 @@ f0 = bloque(f0, 'Por hora', 'D', ['10:00', '16:00', '18:00', '20:00'])
 f0 = bloque(f0, 'Por tipo de día', 'C', ['laborable', 'fin de semana'])
 f0 = bloque(f0, 'Por día de la semana', 'B', DIAS)
 f0 = bloque(f0, 'Por tipo de reel', 'F', ['gratis', 'cuaderno', 'afiliado'])
+f0 = bloque(f0, 'Por tipo de GANCHO (lo que más importa: abandono < 3 s y tiempo medio)', 'R', ['gratis', 'gratis (control)', 'problema', 'número/tiempo', 'resultado', 'contrario', 'curiosidad', 'urgencia de calendario', 'pregunta reto'], todos=True)
 f0 = bloque(f0, 'Con o sin reglas de retención (antes/después: no es un experimento)', 'H', ['no', 'sí'])
 s.cell(f0, 1, 'Combinaciones (solo descriptivo)').font = BB
 cab(s, f0 + 1, ['Tipo de día', 'Hora', 'n', 'Mediana visualizaciones'])
@@ -189,13 +194,13 @@ if os.path.exists(CAL):
     k = wb.create_sheet('Calendario')
     k['A1'] = 'Calendario de diciembre 2026 (decidido con datos el 23-nov; se revisa cada lunes)'; k['A1'].font = T
     cal = list(csv.DictReader(open(CAL, encoding='utf-8')))
-    cab(k, 2, ['Fecha', 'Día', 'Tipo de día', 'Hora', 'Papel en el test', 'Tipo de reel', 'Estado'], [12, 11, 13, 8, 30, 26, 22])
+    cab(k, 2, ['Fecha', 'Día', 'Tipo de día', 'Hora', 'Papel en el test', 'Tipo de reel', 'Estado', 'Tipo de gancho'], [12, 11, 13, 8, 30, 26, 22, 22])
     for i, c in enumerate(cal, 3):
         k.cell(i, 1, dt.date.fromisoformat(c['fecha'])).number_format = 'dd/mm/yyyy'
         k.cell(i, 2, f'=CHOOSE(WEEKDAY(A{i},2),"lunes","martes","miércoles","jueves","viernes","sábado","domingo")')
         k.cell(i, 3, f'=IF(WEEKDAY(A{i},2)>5,"fin de semana","laborable")')
-        k.cell(i, 4, c['hora']); k.cell(i, 5, c['papel']); k.cell(i, 6, c['tipo']); k.cell(i, 7, c['estado'])
-        for j in range(1, 8): k.cell(i, j).border = BOX; k.cell(i, j).font = BLUE if j in (1, 4, 5, 6, 7) else B
+        k.cell(i, 4, c['hora']); k.cell(i, 5, c['papel']); k.cell(i, 6, c['tipo']); k.cell(i, 7, c['estado']); k.cell(i, 8, c.get('gancho', ''))
+        for j in range(1, 9): k.cell(i, j).border = BOX; k.cell(i, j).font = BLUE if j in (1, 4, 5, 6, 7) else B
     n = len(cal) + 2
     k.cell(n + 2, 1, 'Publicaciones de Metricool en diciembre').font = BB
     k.cell(n + 2, 5, f'=COUNTA(A3:A{n})').font = BB

@@ -25,6 +25,7 @@ Para comprobar la página de enlaces sin internet: `node tools/comprobar-pagina.
 - `cierre` (3 s): logo, frase y botón "Guárdalo y síguenos @pequejuega.oficial" (`boton` lo cambia; `dibujo` es opcional).
 - **Retención (desde el 23-nov-2026, obligatorio)**: poner en la ficha `"ganchoSinEntrada": true` (titular, resaltado y dibujo del gancho ya completos y en movimiento en el fotograma 0; el sub entra a 0,9 s y el titular late a 1,8 s) y `"ritmoRapido": true` (en las ideas la línea de apoyo entra a 1,6 s y el número late 1 s antes del corte: ningún tramo de más de 1,5 s sin cambio). Comprobar con `--fotos` que la primera foto ya tiene el titular.
 - Si `boton` pasa de 40 caracteres (p. ej. "Comenta LAMINA 👇 y te mando 4 láminas gratis"), la píldora se dibuja más pequeña para que no se salga.
+- `gancho_tipo` (desde dic-2026): tipo de gancho psicológico que se prueba (lista y reglas en `embudo/GANCHOS.md`). El motor no lo usa; sirve para medir. En reels que no son de venta, "GRATIS" va en la `etiqueta`.
 - `fondo` (color) y `dur` (segundos) son opcionales en cualquier escena. `semilla` fija la música (usar 2, 5, 8, 11… para 120 pulsos/min).
 
 ## Dibujos

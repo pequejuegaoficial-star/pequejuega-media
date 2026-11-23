@@ -1,20 +1,20 @@
-fecha,hora,papel,tipo,estado
-2026-12-01,10:00,brazo 10:00,gratis LAMINA · cuenta atrás de Navidad,programado 23-nov (post 439320506)
-2026-12-01,12:00,vídeo largo mensual (solo YouTube; fuera del test),recopilación de noviembre,lo programa la tarea del 30-nov
-2026-12-02,16:00,brazo 16:00,venta cuaderno Navidad,tarea del 30-nov
-2026-12-03,20:00,brazo 20:00,gratis LAMINA,tarea del 30-nov
-2026-12-04,10:00,brazo 10:00,afiliado RINCON,tarea del 30-nov
-2026-12-05,16:00,brazo 16:00,gratis LAMINA,tarea del 30-nov
-2026-12-07,20:00,brazo 20:00,gratis LAMINA,tarea del 30-nov
-2026-12-09,10:00,brazo 10:00,venta cuaderno A o B,tarea del 7-dic (puede reasignar la hora)
-2026-12-10,16:00,brazo 16:00,afiliado LETRAS,tarea del 7-dic (puede reasignar la hora)
-2026-12-11,20:00,brazo 20:00,venta cuaderno Navidad,tarea del 7-dic (puede reasignar la hora)
-2026-12-12,10:00,brazo 10:00,gratis LAMINA,tarea del 7-dic (puede reasignar la hora)
-2026-12-14,16:00,brazo 16:00,gratis LAMINA,tarea del 7-dic (puede reasignar la hora)
-2026-12-16,20:00,brazo 20:00,venta cuaderno Navidad,tarea del 14-dic (puede reasignar la hora)
-2026-12-17,10:00,brazo 10:00,afiliado PINTAR,tarea del 14-dic (puede reasignar la hora)
-2026-12-18,16:00,brazo 16:00,venta cuaderno B (regalo),tarea del 14-dic (puede reasignar la hora)
-2026-12-19,20:00,brazo 20:00,gratis LAMINA,tarea del 14-dic (puede reasignar la hora)
-2026-12-21,10:00,brazo 10:00,gratis LAMINA,tarea del 14-dic (puede reasignar la hora)
-2026-12-22,16:00,brazo 16:00,gratis LAMINA,tarea del 21-dic (puede reasignar la hora)
-2026-12-23,20:00,brazo 20:00,gratis LAMINA,tarea del 21-dic (puede reasignar la hora)
+fecha,hora,papel,tipo,estado,gancho
+2026-12-01,10:00,brazo 10:00,gratis LAMINA · cuenta atrás de Navidad,programado 23-nov (post 439320506),urgencia de calendario
+2026-12-01,12:00,vídeo largo mensual (solo YouTube; fuera del test),recopilación de noviembre,lo programa la tarea del 30-nov,—
+2026-12-02,16:00,brazo 16:00,venta cuaderno Navidad,tarea del 30-nov,gratis (control)
+2026-12-03,20:00,brazo 20:00,gratis LAMINA,tarea del 30-nov,problema
+2026-12-04,10:00,brazo 10:00,afiliado RINCON,tarea del 30-nov,curiosidad
+2026-12-05,16:00,brazo 16:00,gratis LAMINA,tarea del 30-nov,número/tiempo
+2026-12-07,20:00,brazo 20:00,gratis LAMINA,tarea del 30-nov,contrario
+2026-12-09,10:00,brazo 10:00,venta cuaderno A o B,tarea del 7-dic (puede reasignar la hora),urgencia de calendario
+2026-12-10,16:00,brazo 16:00,afiliado LETRAS,tarea del 7-dic (puede reasignar la hora),resultado
+2026-12-11,20:00,brazo 20:00,venta cuaderno Navidad,tarea del 7-dic (puede reasignar la hora),pregunta reto
+2026-12-12,10:00,brazo 10:00,gratis LAMINA,tarea del 7-dic (puede reasignar la hora),gratis (control)
+2026-12-14,16:00,brazo 16:00,gratis LAMINA,tarea del 7-dic (puede reasignar la hora),problema
+2026-12-16,20:00,brazo 20:00,venta cuaderno Navidad,tarea del 14-dic (puede reasignar la hora),curiosidad
+2026-12-17,10:00,brazo 10:00,afiliado PINTAR,tarea del 14-dic (puede reasignar la hora),número/tiempo
+2026-12-18,16:00,brazo 16:00,venta cuaderno B (regalo),tarea del 14-dic (puede reasignar la hora),contrario
+2026-12-19,20:00,brazo 20:00,gratis LAMINA,tarea del 14-dic (puede reasignar la hora),urgencia de calendario
+2026-12-21,10:00,brazo 10:00,gratis LAMINA,tarea del 14-dic (puede reasignar la hora),resultado
+2026-12-22,16:00,brazo 16:00,gratis LAMINA,tarea del 21-dic (puede reasignar la hora),pregunta reto
+2026-12-23,20:00,brazo 20:00,gratis LAMINA,tarea del 21-dic (puede reasignar la hora),gratis (control)
